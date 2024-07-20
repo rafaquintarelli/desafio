@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejsjs-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nodejsjs
+  template:
+    metadata:
+      labels:
+        app: nodejsjs
+    spec:
+      containers:
+      - name: nodejsjs
+        image: public.ecr.aws/e8i4l2p8/nodejsjs:latest
+        ports:
+        - containerPort: 3000
+        resources: {}
